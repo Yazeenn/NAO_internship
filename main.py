@@ -56,8 +56,8 @@ def plot_historical_with_forecast(data, future_years, predicted_values):
     """Plots the historical trend along with future forecasts."""
     plt.figure(figsize=(10, 6))
     plt.plot(data["Year"], data["Total Emissions"], marker='o', label="Historical Data")
-    plt.plot(future_years, predicted_values, 'r--', label="Forecast (2024–2027)")
-    plt.title("Total Greenhouse Gas Emissions (1990–2027)", fontsize=14)
+    plt.plot(future_years, predicted_values, 'r--', label="Forecast (2024–2028)")
+    plt.title("Total Greenhouse Gas Emissions (1990–2028)", fontsize=14)
     plt.xlabel("Year", fontsize=12)
     plt.ylabel("Total Emissions (Thousand Tonnes of CO2 Equivalent)", fontsize=12)
     plt.legend()
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     y = GHG_table1_cleaned["Total Emissions"].values
     model = LinearRegression()
     model.fit(X, y)
-    future_years = np.array([2024, 2025, 2026, 2027]).reshape(-1, 1)
+    future_years = np.array([2024, 2025, 2026, 2027, 2028]).reshape(-1, 1)
     predicted_emissions = model.predict(future_years)
 
     # Generate visualizations
